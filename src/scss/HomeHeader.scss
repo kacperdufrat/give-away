@@ -1,0 +1,78 @@
+@import "./settings/colors.scss";
+@import "./settings/fonts.scss";
+
+header {
+	background-image: url("../assets/Home-Hero-Image.jpg");
+	background-position: -75%;
+	background-repeat: no-repeat;
+    height: 100vh;
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 2rem 5rem;
+        .menu-log {
+            font-size: 0.8rem;
+            a {
+                padding: 0.3rem 1rem;
+                border: 0.0625rem solid transparent; 
+                text-decoration: none;
+                color: $color-grey;
+                &:hover {
+                    border: 0.0625rem solid $color-yellow;
+                }
+            }
+        }
+        nav {
+            padding: 2rem 0;
+            ul {
+                display: flex;
+                li {
+                    padding: 0.5rem 1rem;
+                    border: 0.0625rem solid transparent; 
+                    text-decoration: none;
+                    color: $color-darkgrey;
+                    cursor: pointer;
+                    &:hover {
+                        border: 0.0625rem solid $color-darkgrey;
+                    }
+                }
+            }
+        }
+    }
+    .header-content {
+        margin: 8rem 0 0 45rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $color-darkgrey;
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            line-height: 3rem;
+        }
+        .header-decoration {
+            padding-top: 1.5rem;
+        }
+        .header-btn {
+            padding-top: 3rem;
+            display: flex;
+            justify-content: space-evenly;
+            button {
+                padding: 1rem 4rem;
+                border: 0.0625rem solid $color-grey;
+                background-color: transparent;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 2rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                width: 40%;
+                &:hover {
+                    border: 0.0625rem solid $color-yellow;
+                }
+            }
+        }
+    }
+} 
+
+
