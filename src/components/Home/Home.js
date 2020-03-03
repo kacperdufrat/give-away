@@ -15,7 +15,7 @@ const Home = () => {
         <Element name="/"><HomeHeader/></Element>
         <Element name="HomeInstructions"><HomeStatistics /></Element>
         <HomeInstructions />
-        <HomeAboutUs />
+        <Element name="HomeAboutUs"><HomeAboutUs /></Element>
         <HomeSummary />
         <HomeContact />
         <HomeFooter />

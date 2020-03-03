@@ -1,0 +1,36 @@
+@import "../scss/settings/colors.scss";
+
+.about {
+    margin-top: 2rem;
+    display: flex;
+    color: $color-darkgrey;
+    .about-text {
+        text-align: center;
+        background-color: $color-white;
+        padding: 9rem;
+        width: 25%;
+        h2 {
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+        .about-decoration {
+            padding-top: 1.5rem;
+        }
+        p {
+            padding-top: 2rem;
+            font-size: 1.2rem;
+            line-height: 2.5rem;
+        }
+        img {
+            height: 30%;
+            padding-top: 2rem;
+            margin-left: 20rem;
+        }
+    }
+    .about-img {
+        width: 100%;
+        background-image: url("../assets/People.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
