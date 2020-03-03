@@ -1,0 +1,28 @@
+@import "./settings/colors.scss";
+
+.statistics-container {
+    background-image: url(../assets/Background-Statistics.png);
+    background-size: 100%;
+    display: flex;
+    justify-content: space-around;
+    div {
+        padding-top: 3rem;
+        color: $color-brown;
+        text-align: center;
+        max-width: 20%;
+        .statistics-title {
+            font-size: 5rem;
+            font-weight: 300;
+        }
+        .statistics-info {
+            text-transform: uppercase;
+            padding-top: 1.5rem;
+        }
+        .statistics-text {
+            font-size: 0.9rem;
+            padding-top: 1.5rem;
+            padding-bottom: 3rem;
+            line-height: 1.5rem;
+        }
+    }
+}

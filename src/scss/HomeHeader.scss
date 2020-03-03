@@ -3,7 +3,7 @@
 
 header {
 	background-image: url("../assets/Home-Hero-Image.jpg");
-	background-position: -75%;
+	background-position: -75% 100%;
 	background-repeat: no-repeat;
     height: 100vh;
     .menu {
@@ -41,7 +41,7 @@ header {
         }
     }
     .header-content {
-        margin: 8rem 0 0 45rem;
+        margin: 12rem 0 0 45rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -69,6 +69,10 @@ header {
                 width: 40%;
                 &:hover {
                     border: 0.0625rem solid $color-yellow;
+                }
+                a {
+                    text-decoration: none;
+                    color: $color-darkgrey;
                 }
             }
         }

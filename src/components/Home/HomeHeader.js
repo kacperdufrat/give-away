@@ -37,8 +37,8 @@ const HomeHeader = () => {
                 <h2>Oddaj niechciane rzeczy w zaufane ręce</h2>
                 <Decoration className="header-decoration"/>
                 <div className="header-btn">
-                    <button>Oddaj rzeczy</button>
-                    <button>Zorganizuj zbiórkę</button>
+                    <button><NavLink to="/logowanie">Oddaj rzeczy</NavLink></button>
+                    <button><NavLink to="/logowanie">Zorganizuj zbiórkę</NavLink></button>
                 </div>
             </div>
         </header>
