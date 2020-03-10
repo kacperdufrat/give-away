@@ -1,4 +1,5 @@
 import React from "react";
+import "../../../scss/Pagination.scss";
 
 const Pagination = ({postsPerPage, totalPosts, paginate}) => {
     const pageNumbers = [];
@@ -9,7 +10,7 @@ const Pagination = ({postsPerPage, totalPosts, paginate}) => {
 
     return (
         <nav>
-            <ul>
+            <ul className="paginate-btn">
                 {pageNumbers.map(number => <li key={number}>
                     <button onClick={() => paginate(number)}>{number}</button>
                 </li>)}

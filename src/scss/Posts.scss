@@ -1,0 +1,31 @@
+@import "../scss/settings/fonts.scss";
+@import "../scss/settings/colors.scss";
+
+.summary-items {
+    padding-top: 2rem;
+    li {
+        font-family: $font-alt;
+        font-weight: 300;
+        padding: 1.5rem;
+        width: 80vh;
+        border-bottom: 0.0625rem solid $color-grey;
+        &:last-of-type { 
+            border-bottom: 0.0625rem solid transparent;
+        }
+        .item-description {
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
+            .item-title {
+                font-size: 1.2rem;
+            }
+            .item-info {
+                font-size: 0.8rem;
+                padding-top: 0.8rem;
+            }
+        }
+    }
+}

@@ -3,6 +3,7 @@ import Foundations from "./Foundations.js";
 import Locals from "./Locals.js";
 import Organizations from "./Organizations.js";
 import Pagination from "./Pagination.js";
+import "../../../scss/Posts.scss";
 
 const Posts = () => {
     const [type, setType] = useState("foundation");
@@ -14,9 +15,6 @@ const Posts = () => {
     const organizationsPosts = Organizations.slice(indexOfFirstPost, indexOfLastPost);
     const foundationsPosts = Foundations.slice(indexOfFirstPost, indexOfLastPost);
     const localsPosts = Locals.slice(indexOfFirstPost, indexOfLastPost);
-
- 
-
     let totalPosts;
     let content;
 
@@ -25,45 +23,49 @@ const Posts = () => {
     }
     
     const handleType = (name) => {
+        setCurrentPage(1);
         setType(name);
     }
-
 
     if (type === "organizations") {
         totalPosts = Organizations.length;
         content = (
-            <>
-            <h1>Organizacja xxx</h1>
-            <p>opis organizacji xxx</p>
             <ul>
-                {organizationsPosts.map(el => <li>{el.title}, {el.description}, {el.info}</li>)}
+                {organizationsPosts.map(el => <li key={el.title}>
+                    <div>
+                        <span className="item-title">{el.title}</span> 
+                        <span className="item-info">{el.info}</span>
+                    </div>
+                    <span className="item-description">{el.description}</span>
+                </li>)}
             </ul>
-            </>
         )
     } else if (type === "locals") {
-        totalPosts = Locals.length;
         content = (
-            <>
-            <h1>Lokalna zbiórka xxx</h1>
-            <p>opis lokalnej zbiórki xxx</p>
             <ul>
-                {localsPosts.map(el => <li>{el.title}, {el.description}, {el.info}</li>)}
+                {localsPosts.map(el => <li key={el.title}>
+                    <div>
+                        <span className="item-title">{el.title}</span> 
+                        <span className="item-info">{el.info}</span>
+                    </div>
+                    <span className="item-description">{el.description}</span>
+                </li>)}
             </ul>
-            </>
         )
     } else {
         totalPosts = Foundations.length;
         content = (
-            <>
-            <h1>Fundacja xxx</h1>
-            <p>opis fundacji xxx</p>
             <ul>
-                {foundationsPosts.map(el => <li>{el.title}, {el.description}, {el.info}</li>)}
+                {foundationsPosts.map(el => <li key={el.title}>
+                    <div>
+                        <span className="item-title">{el.title}</span> 
+                        <span className="item-info">{el.info}</span>
+                    </div>
+                    <span className="item-description">{el.description}</span>
+                </li>)}
             </ul>
-            </>
         )
     }
-
 
     return (
         <>
@@ -71,9 +73,8 @@ const Posts = () => {
             <button onClick={() => handleType("foundations")}>Fundacjom</button>
             <button onClick={() => handleType("organizations")}>Organizacjom pozarządowym</button>
             <button onClick={() => handleType("locals")}>Lokalnym zbiórkom</button>
-    `   </div>
-        <div>{content}</div>
-
+        </div>
+        <div className="summary-items">{content}</div>
         <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate}/>
         </>
     )
