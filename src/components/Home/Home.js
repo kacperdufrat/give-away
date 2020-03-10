@@ -5,7 +5,6 @@ import HomeInstructions from "./HomeInstructions";
 import HomeAboutUs from "./HomeAboutUs";
 import HomeSummary from "./HomeSummary";
 import HomeContact from "./HomeContact";
-import HomeFooter from "./HomeFooter";
 import * as Scroll from 'react-scroll';
 const Element = Scroll.Element;
 
@@ -16,9 +15,8 @@ const Home = () => {
         <Element name="HomeInstructions"><HomeStatistics /></Element>
         <HomeInstructions />
         <Element name="HomeAboutUs"><HomeAboutUs /></Element>
-        <HomeSummary />
+        <Element name="HomeSummary"><HomeSummary /></Element>
         <HomeContact />
-        <HomeFooter />
     </>
     )
 }
