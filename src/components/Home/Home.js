@@ -16,7 +16,7 @@ const Home = () => {
         <HomeInstructions />
         <Element name="HomeAboutUs"><HomeAboutUs /></Element>
         <Element name="HomeSummary"><HomeSummary /></Element>
-        <HomeContact />
+        <Element name="HomeContact"><HomeContact /></Element>
     </>
     )
 }

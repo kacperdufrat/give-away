@@ -1,4 +1,5 @@
 @import "./settings/colors.scss";
+@import "./settings/fonts.scss";
 
 .contact::before {
     content: "";
@@ -9,17 +10,108 @@
     opacity: 0.2;
     position: absolute;
     z-index: -1;
-        .contact {
-            margin: 12rem 0 0 45rem;
+}
+
+.contact-form {
+    padding: 12rem 0 0 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $color-darkgrey;
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+        line-height: 3rem;
+    }
+    .contact-decoration {
+        padding-top: 1.5rem;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        .inputs {
+            padding-top: 3rem;
+            display: flex;
+            .input {
+                display: flex;
+                flex-direction: column;
+                padding: 2rem;
+                label {
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                }
+                input {
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 0.0625rem solid $color-grey;
+                    padding-top: 1.5rem;
+                    padding-bottom: 0.5rem;
+                    &::placeholder {
+                        color: lightgrey;
+                    }
+                }
+            }
+        }
+        .textarea {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            color: $color-darkgrey;
-            h2 {
-                font-size: 2rem;
-                text-align: center;
-                line-height: 3rem;
+            padding: 0 2rem 2rem 2rem;
+            label {
+                font-size: 0.8rem;
+                font-weight: 700;
+            }
+            textarea {
+                background-color: transparent;
+                border: none;
+                border-bottom: 0.0625rem solid $color-grey;
+                font-family: $font-base;
+                padding-top: 1.5rem;
+                resize: none;
+                height: 4rem;
+                padding-bottom: 0.5rem;
+
+                &::placeholder {
+                    color: lightgrey;
+                    font-family: $font-base;
+                }
+            }
         }
-        
+        button {
+            padding: 0.5rem;
+            border: 0.0625rem solid $color-grey;
+            background-color: transparent;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            max-width: 20%;
+            margin-left: 24rem;
+            &:hover {
+                border: 0.0625rem solid $color-yellow;
+            }
+        }
+    }
+}
+
+.contact {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+    footer {
+        padding: auto 0;
+        display: flex;
+        align-items: center;
+        span {
+            margin: 0 auto;
+        }
+        .icons {
+            position: absolute;
+            right: 10rem;
+            img {
+                padding: 0.5rem;
+                cursor: pointer;
+            }
+        }
     }
 }
