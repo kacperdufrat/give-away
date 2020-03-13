@@ -1,0 +1,91 @@
+@import "../scss//settings/colors.scss";
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 2rem 5rem;
+    .menu-log {
+        font-size: 0.8rem;
+        a {
+            padding: 0.3rem 1rem;
+            border: 0.0625rem solid transparent; 
+            text-decoration: none;
+            color: $color-grey;
+            &:hover {
+                border: 0.0625rem solid $color-yellow;
+            }
+        }
+    }
+    nav {
+        padding: 2rem 0;
+        ul {
+            display: flex;
+            li {
+                padding: 0.5rem 1rem;
+                border: 0.0625rem solid transparent; 
+                text-decoration: none;
+                color: $color-darkgrey;
+                cursor: pointer;
+                &:hover {
+                    border: 0.0625rem solid $color-darkgrey;
+                }
+            }
+        }
+    }
+}
+
+.login-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+        padding-top: 5rem;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+    .login-decoration {
+        padding-top: 1.5rem;
+    }
+    .login-form {
+        background-color: $color-white;
+        margin-top: 3rem;
+        padding: 1.5rem 4rem;
+        form {
+            display: flex;
+            flex-direction: column;
+            label {
+                font-size: 0.8rem;
+                font-weight: 700;
+                margin-top: 1rem;
+            }
+            input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 0.0625rem solid $color-grey;
+                padding-top: 1.5rem;
+            }
+        }
+    }
+    .login-buttons {
+        display: flex;
+        padding: 3rem;
+        button {
+            padding: 0.5rem;
+            margin: 0 6rem;
+            border: 0.0625rem solid $color-grey;
+            background-color: transparent;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            &:hover {
+                border: 0.0625rem solid $color-yellow;
+            }
+            a {
+                text-decoration: none;
+                color: $color-darkgrey;
+            }
+        }
+    }
+}

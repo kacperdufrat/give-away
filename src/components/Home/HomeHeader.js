@@ -1,8 +1,8 @@
 import React from "react";
 import {NavLink} from 'react-router-dom';
-import {Link as Scroll} from 'react-scroll';
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import '../../scss/HomeHeader.scss';
+import Navigation from "./HomeNavigation";
 
 const HomeHeader = () => {
     return (
@@ -12,25 +12,7 @@ const HomeHeader = () => {
                     <NavLink to="/logowanie">Zaloguj</NavLink>
                     <NavLink to="/rejestracja">Załóż konto</NavLink>
                 </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Scroll to="/">Start</Scroll>
-                        </li>
-                        <li>
-                            <Scroll to="HomeInstructions" spy={true} smooth={true} duration={500}>O co chodzi?</Scroll>
-                        </li>
-                        <li>
-                            <Scroll to="HomeAboutUs" spy={true} smooth={true} duration={500}>O nas</Scroll>
-                        </li>
-                        <li>
-                            <Scroll to="HomeSummary" spy={true} smooth={true} duration={500}>Fundacja i organizacje</Scroll>
-                        </li>
-                        <li>
-                            <Scroll to="HomeContact" spy={true} smooth={true} duration={500}>Kontakt</Scroll>
-                        </li>
-                    </ul>
-                </nav>
+                <Navigation />
             </div>
             <div className="header-content">
                 <h2>Zacznij pomagać!</h2>
