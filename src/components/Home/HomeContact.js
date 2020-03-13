@@ -7,7 +7,7 @@ import "../../scss/HomeContact.scss";
 const HomeContact = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [text, setText] = useState("");
+    const [message, setMessage] = useState("");
     const [errors, setErrors] = useState([]);
     const [success, setSuccess] = useState(false);
 
@@ -27,7 +27,7 @@ const HomeContact = () => {
             } else {
             tempErrors.push("");
             }
-            if (text.length < 120) {
+            if (message.length < 120) {
             tempErrors.push("Wiadomość musi mieć co najmniej 120 znaków");
             } else {
             tempErrors.push("");
@@ -35,21 +35,16 @@ const HomeContact = () => {
 
         setErrors(tempErrors);
 
-        if (tempErrors.length > 0) {
-            setErrors(tempErrors);
-            return false;
-        }
-
-        const message = {
+        const userMessage = {
             name,
             email,
-            text,
-            errors: errors
+            message,
+            errors
         };
 
         fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
             method: "POST",
-            body: JSON.stringify(message),
+            body: JSON.stringify(userMessage),
             headers: {
                 "Content-Type": "application/json"
             }
@@ -66,21 +61,23 @@ const HomeContact = () => {
                     setSuccess(true);
                     setName("");
                     setEmail("");
-                    setText("");
+                    setMessage("");
                 }
             })
             .catch(err => {
                 console.log(err);
             });
+            setSuccess(false);
         }
         
+
 
     return (
         <section className="contact">
             <div className="contact-form">
                 <h2>Skontaktuj się z nami</h2>
                 <Decoration className="contact-decoration"/>
-                <span>{success}</span>
+                <span className={success ? "success-info" : "success-info hidden"}>Wiadomość została wysłana! Wkrótce się skontaktujemy!</span>
                 <form onSubmit={handleSubmit}>
                     <div className="inputs">
                         <div className="input">
@@ -96,11 +93,11 @@ const HomeContact = () => {
                     </div>
                     <div className="textarea">
                         <label htmlFor="text">Wpisz swoją wiadomość</label>
-                        <textarea value={text} 
+                        <textarea value={message} 
                         placeholder="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
                         Aenean commodo ligula eget dolor. Aenean massa. 
                         Cum sociis natoque penatibus et magnis dis parturient montes" 
-                        onChange={e => setText(e.target.value)}/>
+                        onChange={e => setMessage(e.target.value)}/>
                         <span className="error">{errors[2]}</span>
                     </div>
                     <button>Wyślij</button>
