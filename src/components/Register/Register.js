@@ -28,7 +28,7 @@ const Register = () => {
         } else {
             tempErrors.push("");
         } 
-        if (passwordConfirm.length < 6 || passwordConfirm.value !== password.value) {
+        if (passwordConfirm.length < 6 || passwordConfirm !== password) {
             tempErrors.push("Hasło jest za błędne!");
         } else {
             tempErrors.push("");
